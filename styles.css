@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  .age-calculation{
+    background-color: rgba(205, 237, 22, 0.692);
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-left: 450px;
+  }
+  
+  .h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 200px;
+    padding: 8px;
+  }
+  
+  button {
+    background-color: #7fe207;
+    color: rgb(52, 6, 6);
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    /* transition: background-color 0.3s ease; */
+  }
+  
+  button:hover {
+    background-color: #f458b3;
+  }
+  
+  #age {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
