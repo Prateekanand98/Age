@@ -8,7 +8,7 @@ function calculateAge() {
     alert("Please enter your birthday");
   } else {
     const [ageYears, ageMonths, ageDays] = getAge(birthdayValue);
-    final_age.innerText = `Your are ${ageYears} ${age > 1 ? "years" : "year"} ${ageMonths} months ${ageDays}old`;
+    final_age.innerText = `Your are ${ageYears} ${age > 1 ? "years" : "year"} ${ageMonths} months ${ageDays} days old`;
   }
 }
 
