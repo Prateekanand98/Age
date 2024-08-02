@@ -8,20 +8,29 @@ function calculateAge() {
     alert("Please enter your birthday");
   } else {
     const [ageYears, ageMonths, ageDays] = getAge(birthdayValue);
-    final_age.innerText = `Your are ${ageYears} ${age > 1 ? "years" : "year"} ${ageMonths} months ${ageDays} days old`;
+    if (ageYears === null) {
+      return;
+    }
+    final_age.innerText = `You are ${ageYears} ${ageYears > 1 ? "years" : "year"} ${ageMonths} ${ageMonths > 1 ? "months" : "month"} ${ageDays} ${ageDays > 1 ? "days" : "day"} old`;
   }
 }
 
 function getAge(birthdayValue) {
   const currentDate = new Date();
   const birthdayDate = new Date(birthdayValue);
+  
+  if (currentDate < birthdayDate) {
+    alert("Not Born Yet");
+    return [null, null, null];
+  }
+  
   let ageYears = currentDate.getFullYear() - birthdayDate.getFullYear();
   let ageMonths = currentDate.getMonth() - birthdayDate.getMonth();
   let ageDays = currentDate.getDate() - birthdayDate.getDate();
 
   if (ageDays < 0) {
     ageMonths--;
-    ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    ageDays += new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
   }
 
   if (ageMonths < 0) {
@@ -29,10 +38,7 @@ function getAge(birthdayValue) {
     ageMonths += 12;
   }
 
-  const results = [ageYears, ageMonths, ageDays];
-  return results;
-
-
+  return [ageYears, ageMonths, ageDays];
 }
 
-calculate_age.addEventListener("click", calculateAge)
+calculate_age.addEventListener("click", calculateAge);
